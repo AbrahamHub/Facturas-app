@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.FiltradoActivity">
+
+    <include
+        android:id="@+id/includeMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/toolbar_generica" />
+
+    <TextView
+        android:id="@+id/tvFechaEmisionFactura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:text="@string/con_fecha_de_emision"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/includeMainActivity"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvDesde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/desde"
+        app:layout_constraintEnd_toStartOf="@+id/tvHasta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFechaEmisionFactura"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnDesde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/light_grey"
+        android:text="@string/dia_mes_ano"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintEnd_toStartOf="@+id/btnHasta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesde"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvHasta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hasta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFechaEmisionFactura"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnHasta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="92dp"
+        android:backgroundTint="@color/light_grey"
+        android:text="@string/dia_mes_ano"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHasta"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/dividerFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHasta"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvImporteFactura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/por_un_importe"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dividerFecha"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvMinImporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/valorminimo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvImporteFactura"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvMaxImporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/valor_maximo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvImporteFactura"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvImporteActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/valoractual"
+        android:textColor="@color/green"
+        app:layout_constraintEnd_toStartOf="@+id/tvMaxImporte"
+        app:layout_constraintStart_toEndOf="@+id/tvMinImporte"
+        app:layout_constraintTop_toBottomOf="@+id/tvImporteFactura"
+        tools:ignore="MissingConstraints" />
+
+    <SeekBar
+        android:id="@+id/seekbarImporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="12dp"
+        android:thumb="@drawable/bola_seekbar_personalizada"
+        android:thumbTint="#8BC34A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMinImporte" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/dividerImporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/seekbarImporte"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvEstadoFactura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/por_estado"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dividerImporte"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/checkboxPagada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/pagadas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstadoFactura" />
+
+    <CheckBox
+        android:id="@+id/checkboxAnuladas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/anuladas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxPagada" />
+
+    <CheckBox
+        android:id="@+id/checkboxCuotaFija"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/cuota_fija"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxAnuladas" />
+
+    <CheckBox
+        android:id="@+id/checkboxPendientesDePago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/pendientes_de_pago"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxCuotaFija" />
+
+    <CheckBox
+        android:id="@+id/checkboxPlanDePago"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/plan_de_pago"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxPendientesDePago" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxPlanDePago"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btnAplicar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="2.5dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/aplicar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxPlanDePago"
+            app:layout_constraintVertical_bias="0.257"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnEliminarFiltros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="2.5dp"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@color/white"
+            android:elevation="8dp"
+            android:text="@string/eliminar_filtros"
+            android:textColor="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnAplicar" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
