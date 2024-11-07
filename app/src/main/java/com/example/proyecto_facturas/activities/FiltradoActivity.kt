@@ -334,12 +334,12 @@ class FiltradoActivity : AppCompatActivity() {
         val tvMaxImporte = findViewById<TextView>(R.id.tvMaxImporte)
         val tvImporteActual = findViewById<TextView>(R.id.tvImporteActual)
 
-        tvMaxImporte.text = "${maxImporte}€" //Escribo el valor maximo de la seekbar y le añado €
+        tvMaxImporte.text = "${maxImporte}$" //Escribo el valor maximo de la seekbar y le añado $
 
         //Acciones a realizar en caso de mover la barra (seekbar)
         seekbarImporte.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
-                tvImporteActual.text = "${i}€"  //Escribo el valor actual de la seekbar y le añado €
+                tvImporteActual.text = "${i}$"  //Escribo el valor actual de la seekbar y le añado $
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {

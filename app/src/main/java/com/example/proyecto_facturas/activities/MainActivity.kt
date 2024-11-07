@@ -25,6 +25,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.proyecto_facturas.CrearFacturaActivity
 import com.example.proyecto_facturas.model.Filtro
 import com.example.proyecto_facturas.R
 import com.example.proyecto_facturas.adapter.FacturaAdapter
@@ -70,8 +71,11 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, onBackCallback)
 
         inicializarComponentes()
+        binding.btnCrearFactura.setOnClickListener {
+            val intent = Intent(this, CrearFacturaActivity::class.java)
+            startActivity(intent)
+        }
     }
-
     private fun inicializarComponentes() {
         inicializarAdapter()
         inicializarViewModel()

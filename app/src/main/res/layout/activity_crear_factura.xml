@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="16dp">
+
+    <EditText
+            android:id="@+id/etDescEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción del Estado" />
+
+    <EditText
+            android:id="@+id/etImporteOrdenacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Importe de Ordenación"
+            android:inputType="numberDecimal" />
+
+    <EditText
+            android:id="@+id/etFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha (YYYY-MM-DD)" />
+
+    <Button
+            android:id="@+id/btnGuardarFactura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar Factura" />
+</LinearLayout>
